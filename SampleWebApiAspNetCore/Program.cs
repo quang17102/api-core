@@ -48,8 +48,8 @@ var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionD
 var loggerFactory = app.Services.GetRequiredService<ILoggerFactory>();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI(
         options =>
@@ -63,11 +63,11 @@ if (app.Environment.IsDevelopment())
         });
 
     app.SeedData();
-} 
-else
-{
+// } 
+// else
+// {
     app.AddProductionExceptionHandling(loggerFactory);
-}
+// }
 
 app.UseCors("AllowAllOrigins");
 
